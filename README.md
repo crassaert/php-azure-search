@@ -1,2 +1,2 @@
 # php-azure-search-indexer
-PHP bridge to query Microsoft Azure Search Indexer
+PHP wrapper to query Microsoft Azure Search Indexer
