@@ -1,6 +1,6 @@
 # php-azure-search-indexer
 
-PHP wrapper to query Microsoft Azure Search REST API.
+PHP wrapper to query Microsoft Azure Search REST API by Cédric Rassaert.
 
 It's strongly recommanded to have a Microsoft SQL Server or Azure DocumentDB as data source.
 
@@ -12,8 +12,10 @@ New search instance :
 
 with :
 
+```
 AZURE_SEARCH_HOST = https://[service name].search.windows.net
 AZURE_SEARCH_KEY = Admin key provided by Azure
+```
 
 ## Add a datasource
 
