@@ -11,6 +11,7 @@ class ConnectTest extends PHPUnit_Framework_TestCase
 	{
 		$search = new AzureSearch(AZURE_SEARCH_HOST, AZURE_SEARCH_KEY, false);
 
+		/*
 		$this->log('Fetching current sources');
 		$sources = $search->getSourceRequest()->listSources();
 
@@ -47,6 +48,14 @@ class ConnectTest extends PHPUnit_Framework_TestCase
 				'schedule' => array('interval' => 'PT2H', 'startTime' => date('c'))));
 
 		$this->log($indexer);
+	*/
+		$data = $search->getDocumentRequest()->searchDocument('actions',
+            array(
+                'search' => 'PanterA'
+                )
+            );
+
+		var_dump($data);
 	}
 
 	private function log($msg)

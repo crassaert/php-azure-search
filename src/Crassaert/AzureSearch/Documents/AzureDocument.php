@@ -3,10 +3,10 @@
  * @Author: cedric
  * @Date:   2015-11-17 11:33:57
  * @Last Modified by:   cedric
- * @Last Modified time: 2015-11-17 16:16:57
+ * @Last Modified time: 2015-11-17 17:05:56
  */
 
-namespace Crassaert\AzureSearch\Document;
+namespace Crassaert\AzureSearch\Documents;
 
 use Crassaert\AzureSearch\Request\AzureRequest;
 

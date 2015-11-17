@@ -5,6 +5,7 @@ namespace Crassaert\AzureSearch;
 use Crassaert\AzureSearch\Indexer\AzureSource;
 use Crassaert\AzureSearch\Indexer\AzureIndexer;
 use Crassaert\AzureSearch\Indexes\AzureIndex;
+use Crassaert\AzureSearch\Documents\AzureDocument;
 use Crassaert\AzureSearch\Request\AzureRequest;
 
 
