@@ -44,7 +44,7 @@ class ConnectTest extends PHPUnit_Framework_TestCase
 			array('name' => 'actions',
 				'dataSourceName' => 'actions',
 				'targetIndexName' => 'actions',
-				'schedule' => array('interval' => 'PT15M', 'startTime' => date('c'))));
+				'schedule' => array('interval' => 'PT2H', 'startTime' => date('c'))));
 
 		$this->log($indexer);
 	}

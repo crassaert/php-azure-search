@@ -14,6 +14,7 @@ class AzureSearch {
 	protected $source_request;
 	protected $indexer_request;
 	protected $index_request;
+	protected $document_request;
 
 	/*
 	*
@@ -29,6 +30,7 @@ class AzureSearch {
 		$this->source_request = new AzureSource($this->request);
 		$this->indexer_request = new AzureIndexer($this->request);
 		$this->index_request = new AzureIndex($this->request); 
+		$this->document_request = new AzureDocument($this->request);
 	}
 
 	public function getSourceRequest()
@@ -44,6 +46,11 @@ class AzureSearch {
 	public function getIndexRequest()
 	{
 		return $this->index_request;
+	}
+
+	public function getDocumentRequest()
+	{
+		return $this->document_request;
 	}
 
 }
