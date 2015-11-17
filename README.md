@@ -31,7 +31,7 @@ $search->getSourceRequest()->createSource('actions',
 
 You can add many fields into your index
 
-`
+```
 $fields = array();
 $fields[] = array('name' => 'id', 'type' => 'Edm.String', 'key' => true);
 $fields[] = array('name' => 'name', 'type' => 'Edm.String', 'key' => false);
@@ -39,27 +39,27 @@ $fields[] = array('name' => 'name', 'type' => 'Edm.String', 'key' => false);
 $search->getIndexRequest()->createIndex('my_index',
 			array('name' => 'my_index',
 			'fields' => $fields));
-`
+```
 
 ## Add an indexer
 
-`
+```
 $search->getIndexerRequest()->updateIndexer('actions', 
 			array(
 				'name' => 'actions',
 				'dataSourceName' => 'my_source',
 				'targetIndexName' => 'my_index',
 				'schedule' => array('interval' => 'PT30M', 'startTime' => date('c'))));
-`
+```
 
 ## Searching
 
-`
+```
 $data = $search->getDocumentRequest()->searchDocument('my_index',
 			array(
 				'search' => 'my search string'
 				)
 			);
-`
+```
 
 You can find all options on [Microsoft Azure Website](https://msdn.microsoft.com/fr-fr/library/azure/dn798935.aspx)
