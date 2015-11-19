@@ -2,7 +2,7 @@
 
 PHP wrapper to query Microsoft Azure Search REST API by Cédric Rassaert.
 
-It's strongly recommanded to have a Microsoft SQL Server or Azure DocumentDB as data source.
+It's strongly recommended to have a Microsoft SQL Server or Azure DocumentDB as data source.
 
 # Basic Usage
 
@@ -21,13 +21,13 @@ AZURE_SEARCH_KEY = Admin key provided by Azure
 
 Feel free to use your Microsoft SQL or DocumentDB host.
 
-`
+```
 $search->getSourceRequest()->createSource('actions', 
 			array('name' => 'my_source',
 				  'type' => 'documentdb', // azuresql or documentdb
 				  'credentials' => array('connectionString' => AZURE_DB_CONNECT_STRING),
 				  'container' => array('name' => AZURE_DB_CONTAINER_NAME)));
-`
+```
 
 ## Add an index
 
@@ -51,7 +51,10 @@ $search->getIndexerRequest()->updateIndexer('actions',
 				'name' => 'actions',
 				'dataSourceName' => 'my_source',
 				'targetIndexName' => 'my_index',
-				'schedule' => array('interval' => 'PT30M', 'startTime' => date('c'))));
+				'schedule' => array('interval' => 'PT30M', 
+									'startTime' => date('c')
+									)
+				));
 ```
 
 ## Searching

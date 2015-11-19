@@ -31,13 +31,17 @@ class ConnectTest extends PHPUnit_Framework_TestCase
 		$fields[] = array('name' => 'user_id', 'type' => 'Edm.String', 'key' => false);
 		$fields[] = array('name' => 'network_animal_id', 'type' => 'Edm.String', 'key' => false);
 		$fields[] = array('name' => 'publish', 'type' => 'Edm.String', 'key' => false);
+		$fields[] = array('name' => 'thumb', 'type' => 'Edm.String', 'key' => false);
+		$fields[] = array('name' => 'description', 'type' => 'Edm.String', 'key' => false, 'filterable' => false, 'sortable' => false, 'facetable' => false);
 		$fields[] = array('name' => 'created_at', 'type' => 'Edm.String', 'key' => false);
 
 		$idx = $search->getIndexRequest()->updateIndex('actions',
 			array('name' => 'actions',
-				  'fields' => $fields));
+				  'fields' => $fields)
+			);
 
 		$this->log($idx);
+		var_dump($idx);
 		$this->log('Creating indexer');
 
 		$indexer = $search->getIndexerRequest()->updateIndexer('actions', 
@@ -45,7 +49,7 @@ class ConnectTest extends PHPUnit_Framework_TestCase
 				'dataSourceName' => 'actions',
 				'targetIndexName' => 'actions',
 				'schedule' => array('interval' => 'PT2H', 'startTime' => date('c'))));
-
+		var_dump($indexer);
 		$this->log($indexer);
 
 		$data = $search->getDocumentRequest()->searchDocument('actions',
@@ -53,7 +57,6 @@ class ConnectTest extends PHPUnit_Framework_TestCase
                 'search' => 'PanterA'
                 )
             );
-
 		var_dump($data);
 	}
 
